@@ -6,7 +6,7 @@
 /*   By: dkurcbar <dkurcbar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 15:30:28 by dkurcbar          #+#    #+#             */
-/*   Updated: 2024/01/08 17:35:53 by dkurcbar         ###   ########.fr       */
+/*   Updated: 2024/01/08 21:08:49 by dkurcbar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ int ft_puthexa(unsigned int num)
 		rtn++;
 		tmp /= 16;
 	}
+	if (num == 0)
+		rtn++;
 	if (write_hexa(num) == -1)
 		return (-1);
 	return (rtn);
@@ -110,6 +112,8 @@ int ft_putnumber(int num)
 		rtn++;
 		tmp /= 10;
 	}
+	if (num == 0)
+		rtn++;
 	if (write_num(num) == -1)
 		return (-1);
 	return (rtn);
@@ -162,7 +166,7 @@ int ft_printf(const char *str, ...)
 	}
 	return (-1);
 }
-
+/*
 int main(void)
 {
 	int	i;
@@ -172,9 +176,9 @@ int main(void)
 	ft_putchar('c');
 	ft_putchar('\n');
 	ft_putstr("hola\n");
-	n = -3123123;
-	i =	ft_printf("el string es %s y el numero es %d y en hexa es %x\n", "caca", n, n);
-	j = printf("el string es %s y el numero es %d y en hexa es %x\n", "caca", n, n);
+	n = -0;
+	i =	ft_printf("el string es %s y el numero es %d y en hexa es %x\n", "", n, n);
+	j = printf("el string es %s y el numero es %d y en hexa es %x\n", "", n, n);
 	printf("el ft_printf devolvio %d, y el printf %d\n", i, j);
 	j = ft_puthexa(n);
 	printf("\nputhexa devolvio %d\n", j);
@@ -183,4 +187,4 @@ int main(void)
 	printf("el ft_printf devolvio %d, y el printf %d\n", i, j);
 
 }
-
+*/
