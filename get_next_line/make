@@ -1,0 +1,1 @@
+gcc -Wall -Wextra -Werror -g -D BUFFER_SIZE=$BUFFER get_next_line.c 
